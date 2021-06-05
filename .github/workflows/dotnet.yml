@@ -20,13 +20,13 @@ jobs:
     - name: Create File
       uses: finnp/create-file-action@1.0.0
       env:
-        FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/App.config"
+        FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/app.config"
         FILE_DATA: |
                     "<?xml version='1.0' encoding='utf-8'?>
                     <configuration>
                       <appSettings>
                         <!-- E-mail address to log in with for the Lidl App to run the unit tests -->
-                        <add key="EmailAddress" value=""/>
+                        <add key="EmailAddress" value="${{ secrets.TESTSECRET }}"/>
                         <!-- Password to log in with for the Lidl App to run the unit tests -->
                         <add key="Password" value=""/>
                         <!-- RefreshToken to log in with for the Lidl App to run the unit tests -->
