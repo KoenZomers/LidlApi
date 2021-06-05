@@ -17,12 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.300
-    - shell: bash
-      name: Test secret
+    - name: Test secret
       env:
         SUPER_SECRET: ${{ secrets.TESTSECRET }}
-      run: |
-        echo "$SUPER_SECRET"
+      if:  env.SUPER_SECRET == 'Hello World'
+      run: echo "I know what the secret token is!"
     - name: Install dependencies
       run: dotnet restore
     - name: Build
