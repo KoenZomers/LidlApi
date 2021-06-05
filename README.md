@@ -18,9 +18,55 @@ Note that in no way this code is supported by Lidl itself and it may break at an
 
 ## Usage
 
+Copy the `App.sample.config` file under ConsoleApp and UnitTest to `App.config` and fill it with your Lidl Plus e-mail address and password.
+
+You can then create a new session to connect to the Lidl Plus services using:
+
 ```C#
 // Create a new Session instance to connect with the Lidl APi
 var session = new KoenZomers.Lidl.Api.Session();
+```
+
+This will connect it to the Lidl Plus services of The Netherlands and return content in Dutch. If you wish to connect to Lidl Plus for another county and/or language, you can pass this in through one of the optional arguments in the constructor, i.e. for Germany use:
+
+```C#
+// Create a new Session instance to connect with the Lidl APi
+var session = new KoenZomers.Lidl.Api.Session(language: "DE-DE", country: "DE");
+```
+
+The other optional parameters in the constructor you typically don't need to and should not change from their defaults.
+
+Once you have the session initiated, you need to authenticate it first using:
+
+```C#
+// Authenticate to the Lidl Plus API using an e-mail address and password
+await session.Authenticate("johndoe@hotmail.com", "myLidlPlusPassword");
+```
+
+Instead of using the e-mail address and password to authenticate, you can also use a refresh token to do so, which is a faster way to authenticate as it requires fewer steps behind the scenes:
+
+```C#
+// Authenticate to the Lidl Plus API using a refresh token
+await session.Authenticate("refreshToken");
+```
+
+Once authenticated, you can call one of the methods to retrieve data from the Lidl Plus services, such as:
+
+```C#
+// Retrieve all your receipts
+await session.GetReceipts();
+
+// Retrieve all your coupons
+await session.GetCoupons();
+
+// Retrieve all the scratch coupons you receive after a purchase for discounts on items
+await session.GetScratchCoupons();
+
+// Scratch open the coupon with the provided id
+await session.RedeemScratchCoupon("couponid");
+
+// Mark a specific receipt as favorite
+await session.MakeReceiptFavorite("receiptid");
 ```
 
 Have a look at the Unit Tests and/or Console Application for seeing additional samples about the available data you can pull from the API.
