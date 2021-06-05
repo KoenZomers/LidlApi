@@ -18,9 +18,9 @@ Note that in no way this code is supported by Lidl itself and it may break at an
 
 ## Usage
 
-Copy the `App.sample.config` file under ConsoleApp and UnitTest to `App.config` and fill it with your Lidl Plus e-mail address and password.
+If you want to build the code locally, copy the `App.sample.config` file under ConsoleApp and UnitTest to `App.config` and fill it with your Lidl Plus e-mail address and password.
 
-You can then create a new session to connect to the Lidl Plus services using:
+You can create a new session to connect to the Lidl Plus services using:
 
 ```C#
 // Create a new Session instance to connect with the Lidl APi
