@@ -22,7 +22,7 @@ jobs:
       env:
         FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/app.config"
         FILE_DATA: |
-                    "<?xml version='1.0' encoding='utf-8'?>
+                    "<?xml version="1.0" encoding="utf-8"?>
                     <configuration>
                       <appSettings>
                         <!-- E-mail address to log in with for the Lidl App to run the unit tests -->
