@@ -126,7 +126,7 @@ namespace KoenZomers.Lidl.Api
         public Session(string language = "NL-NL", 
                        string country = "NL", 
                        string clientId = "LidlPlusNativeClient", 
-                       string userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1", 
+                       string userAgent = "Mozilla/5.0 (Linux; Android 9; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.116 Mobile Safari/537.36 EdgA/46.04.4.5157", 
                        string operatingSystem = "Android",
                        string appVersion = "14.37.2",
                        string appPackageName = "com.lidl.eci.lidl.plus",
