@@ -20,7 +20,7 @@ jobs:
     - shell: bash
       name: Test secret
       env:
-        SUPER_SECRET: ${{ secrets.test_secret }}
+        SUPER_SECRET: ${{ secrets.TESTSECRET }}
       run: |
         echo "$SUPER_SECRET"
     - name: Install dependencies
