@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{253379FE-CC3B-4E9B-B59A-6D4ED440D297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{253379FE-CC3B-4E9B-B59A-6D4ED440D297}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{3EA9A75A-8CD1-4AAA-8D04-B1F571D3F990}"
 EndProject
@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4D04A4E-CFA4-4F76-AB56-158B1C51CEE9}"
 	ProjectSection(SolutionItems) = preProject
 		KoenZomers.Lidl.Api.snk = KoenZomers.Lidl.Api.snk
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

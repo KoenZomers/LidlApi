@@ -7,6 +7,18 @@
     <AssemblyOriginatorKeyFile>KoenZomers.Lidl.Api.snk</AssemblyOriginatorKeyFile>
     <AssemblyName>KoenZomers.Lidl.Api</AssemblyName>
     <RootNamespace>KoenZomers.Lidl.Api</RootNamespace>
+    <Version>1.0.0.0</Version>
+    <Authors>Koen Zomers</Authors>
+    <Company>Koen Zomers</Company>
+    <Description>API in .NET 5 which allows communicating with the Lidl Plus services</Description>
+    <Copyright>Koen Zomers</Copyright>
+    <PackageReleaseNotes>- Initial version</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/KoenZomers/LidlApi</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>KoenZomers.Lidl.Api.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

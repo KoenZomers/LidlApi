@@ -1,0 +1,843 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KoenZomers.Lidl.Api</name>
+    </assembly>
+    <members>
+        <member name="T:KoenZomers.Lidl.Api.CookieUtility">
+            <summary>
+            Internal utility class for working with cookies
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.CookieUtility.GetAllCookies(System.Net.CookieContainer)">
+            <summary>
+            Extracts all the cookies from a cookie container so the contents can be read and used
+            </summary>
+            <remarks>Code sample retrieved from https://stackoverflow.com/a/31900670/1271303 </remarks>
+            <returns>IEnumerable containing all cookies available in the CookieContainer</returns>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Alert">
+            <summary>
+            Details on one alert
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.AlertId">
+            <summary>
+            Unique identifier of the alert
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.Section">
+            <summary>
+            Section of the Lidl Plus app where the alert applies (i.e. Purchase)
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.Element">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.Title">
+            <summary>
+            Title of the alert
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.Text">
+            <summary>
+            Text of the alert
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.Date">
+            <summary>
+            Date and time the alert has been raised
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Alert.IsRead">
+            <summary>
+            Boolean indicating if the alert has been read
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.CardInfo">
+            <summary>
+            Details on the card used to pay
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Coupon">
+            <summary>
+            Details on one coupon
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Coupon.Id">
+            <summary>
+            Unique identifier of the coupon
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Coupon.Image">
+            <summary>
+            URL to the image showing the product offered in this coupon
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.CouponPlus">
+            <summary>
+            The temporary, typically monthly, coupon plus deal where you can earn gifts depending on how much you spend at Lidl during that month
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.Id">
+            <summary>
+            Unique identifier of this coupon plus
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.ReachedAmount">
+            <summary>
+            Currently reached amount of purchases towards this coupon plus deal
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.ReachedPercent">
+            <summary>
+            Percentage of completion of the purchase amount needed to entirely make use of this coupon plus
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.ExpirationDays">
+            <summary>
+            Amount of days left before the coupon plus deal expires
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.ExpirationWarning">
+            <summary>
+            Boolean indicating if the Lidl Plus app should actively notify the user when this deal is about to expire
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlus.Items">
+            <summary>
+            Details on the individual milestones one can achieve during this deal
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.CouponPlusItem">
+            <summary>
+            A milestone one can achieve within the coupon plus program
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlusItem.Amount">
+            <summary>
+            Amount of spending at Lidl needed to achieve this milestone
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlusItem.CouponId">
+            <summary>
+            Unique identifier of this milestone
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlusItem.IsRedeemed">
+            <summary>
+            Boolean indicating if the reward for reaching this milestone has been redeemed
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.CouponPlusItem.IsCompleted">
+            <summary>
+            Boolean indicating if this milestone has been completed
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Currency">
+            <summary>
+            Currency data returned by the Lidl API
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Currency.Code">
+            <summary>
+            Code representing the currency, i.e. EUR
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Currency.Symbol">
+            <summary>
+            The monetary symbol
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.EmailExistsCheckResult">
+            <summary>
+            Response from the webservice on the request to check if an e-mail address exists
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.EmailExistsCheckResult.Exists">
+            <summary>
+            Boolean indicating if the e-mail address exists
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.EmailExistsCheckResult.IsSuccess">
+            <summary>
+            Boolean indicating if the request was successful
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.FiscalDataDe">
+            <summary>
+            German fiscal information
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.ForeignPayment">
+            <summary>
+            Details on the payment made and in which currency
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.ItemsLine">
+            <summary>
+            Details on one purchased item
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.JwtLoginToken">
+            <summary>
+            Response from the authentication process containing the JWT tokens to access the API
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.AccessToken">
+            <summary>
+            The access token
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.RefreshToken">
+            <summary>
+            The refresh token
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.IdToken">
+            <summary>
+            The ID token
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.ExpiresIn">
+            <summary>
+            Seconds after which this token will expire after having been given out
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Entities.JwtLoginToken.NotBefore">
+            <summary>
+            Date and time at which this token was given out and starts to be valid
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.ExpiresAt">
+            <summary>
+            Date and time at which this token will no longer be valid
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.Scope">
+            <summary>
+            All the scopes as a string which are valid for this token
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.Scopes">
+            <summary>
+            Array with all the scopes which are valid for this token
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.JwtLoginToken.TokenType">
+            <summary>
+            The type of JWT token
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.NotificationSettings">
+            <summary>
+            Details on the notifications configuration
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Payment">
+            <summary>
+            Details on the payment
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Receipt">
+            <summary>
+            Receipt data returned by the Lidl API
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.Id">
+            <summary>
+            Unique identifier of the receipt
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.IsFavorite">
+            <summary>
+            Boolean indicating if the receipt has been marked as a favorite
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.PurchasedAt">
+            <summary>
+            Date and time at which the sale took place
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.TotalAmount">
+            <summary>
+            Total amount of the purchase
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.StoreCode">
+            <summary>
+            Identifier of the Lidl store at which the purchase took place
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.Currency">
+            <summary>
+            The currency in which the sale took place
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.ArticlesCount">
+            <summary>
+            The amount of items purchased
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.CouponsUsedCount">
+            <summary>
+            The amount of coupons used in the purchased
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.HasReturnedItems">
+            <summary>
+            Boolean indicating if the purchase included returned items
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.ReturnedAmount">
+            <summary>
+            Total amount of the returned items in the purchase
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.InvoiceRequestId">
+            <summary>
+            Unique identifier of the invoice request
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipt.InvoiceId">
+            <summary>
+            Unique identifier of the invoice
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.ReceiptDetail">
+            <summary>
+            Detailed receipt information
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Receipts">
+            <summary>
+            Receipts data returned by the Lidl API
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipts.PageNumber">
+            <summary>
+            Number of the current receipts page
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipts.TotalPages">
+            <summary>
+            Number of available receipts pages
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipts.TotalCount">
+            <summary>
+            Number of available receipts
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Receipts.Receipt">
+            <summary>
+            The receipts
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.ScratchCoupon">
+            <summary>
+            Details on one scratchcoupon
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.Id">
+            <summary>
+            Unique identifier of the scratch coupon
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.PromotionId">
+            <summary>
+            Unique identifier of promoting this item
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.PromotionType">
+            <summary>
+            Type of scratch coupon, typically Scratch
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.CreationDate">
+            <summary>
+            Date and time at which it was issued
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.ExpirationDate">
+            <summary>
+            Date and time at which it will no longer be available
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.Logo">
+            <summary>
+            URL to Azure blob storage where the image for this coupon resides
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.ScratchCoupon.RemainingDays">
+            <summary>
+            Number of days remaining that this scratch coupon can be used
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.Tax">
+            <summary>
+            Details on the paid taxes
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.TaxGroup">
+            <summary>
+            Identifier of the tax percentage group
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.TaxGroupName">
+            <summary>
+            Name of the tax percentage group
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.Percentage">
+            <summary>
+            Percentage of tax held for this group
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.Amount">
+            <summary>
+            Amount of tax withheld
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.TaxableAmount">
+            <summary>
+            The amount over which the tax has been calculated
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.Tax.NetAmount">
+            <summary>
+            The paid amount minus the taxes
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Entities.TotalTaxes">
+            <summary>
+            Sum of all paid taxes
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.TotalTaxes.TotalAmount">
+            <summary>
+            Total amount of paid taxes
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.TotalTaxes.TotalTaxableAmount">
+            <summary>
+            Total amount paid over which taxes have been charged
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Entities.TotalTaxes.TotalNetAmount">
+            <summary>
+            Total amount paid minus the paid taxes
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Exceptions.AccountNotFoundException">
+            <summary>
+            Exception thrown when trying to log in using an e-mail address that is not known in the Lidl App
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Exceptions.AccountNotFoundException.EmailAddress">
+            <summary>
+            The e-mail address with which logging in was attempted
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Exceptions.AccountNotFoundException.#ctor(System.String)">
+            <summary>
+            Throws a new exception
+            </summary>
+            <param name="emailAddress">The e-mail address with which logging in was attempted</param>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Exceptions.CredentialsInvalidException">
+            <summary>
+            Exception thrown when trying to authenticate using invalid credentials
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Exceptions.CredentialsInvalidException.EmailAddress">
+            <summary>
+            The contents of the login page where the request verification token could not be located
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Exceptions.CredentialsInvalidException.Password">
+            <summary>
+            The contents of the login page where the request verification token could not be located
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Exceptions.CredentialsInvalidException.#ctor(System.String,System.String)">
+            <summary>
+            Throws a new exception
+            </summary>
+            <param name="emailAddress">E-mail address provided to use for authentication</param>
+            <param name="password">Password provided to use for authentication</param>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Exceptions.NotAuthenticatedException">
+            <summary>
+            Exception thrown when trying to call a Lidl API that requires the session to be authenticated first
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Exceptions.NotAuthenticatedException.#ctor">
+            <summary>
+            Throws a new exception
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Exceptions.RequestVerificationTokenMissingException">
+            <summary>
+            Exception thrown when no request verification token has been found in the login page
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Exceptions.RequestVerificationTokenMissingException.LoginPageContents">
+            <summary>
+            The contents of the login page where the request verification token could not be located
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Exceptions.RequestVerificationTokenMissingException.#ctor(System.String)">
+            <summary>
+            Throws a new exception
+            </summary>
+            <param name="loginPageContents">The contents of the login page where the request verification token could not be located</param>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Session">
+            <summary>
+            A session towards the Lidl API to retrieve information from it
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Session._cookieContainer">
+            <summary>
+            Cookie container which holds all cookies for requests towards the Lidl Accounts website
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Session.JwtToken">
+            <summary>
+            The JWT token to use to authenticate against the Lidl API
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Session.BaseAuthEndpointUri">
+            <summary>
+            Gets the base URI to the Lidl authentication webservice
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Session.BaseDataEndpointUri">
+            <summary>
+            Gets the base URI to the Lidl data webservice
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.BaseDataEndpointLocalizedUri">
+            <summary>
+            Gets the country localized base URI to the Lidl data webservice
+            </summary>
+        </member>
+        <member name="F:KoenZomers.Lidl.Api.Session.DefaultScopes">
+            <summary>
+            The default scopes for which a token will be requested
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.Language">
+            <summary>
+            The language for the content, formatted like NL-NL for Dutch. This can be set through the constructor.
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.Country">
+            <summary>
+            The country to retrieve data for, formatted like NL for The Netherlands. This can be set through the constructor.
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.ClientId">
+            <summary>
+            Client Id to provide to the Lidl Api to authenticate. This can be set through the constructor.
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.RedirectUri">
+            <summary>
+            Redirect Uri to provide to the Lidl Api to navigate to after successfully authenticating. This can be set through the constructor.
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.UserAgent">
+            <summary>
+            User agent to send to the Lidl Api
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.OperatingSystem">
+            <summary>
+            Operating system identifier to send to the Lidl Api
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.AppVersion">
+            <summary>
+            App version identifier to send to the Lidl Api
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.AppPackageName">
+            <summary>
+            App package name to send to the Lidl Api
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.Scopes">
+            <summary>
+            Scopes to request access to for the Lidl Api
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.RequestTimeOut">
+            <summary>
+            Timeout to use on the HTTP requests in milliseconds
+            </summary>
+        </member>
+        <member name="P:KoenZomers.Lidl.Api.Session.IsAuthenticated">
+            <summary>
+            Returns a boolean indicating if the current session is authenticated
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String[],System.Int32)">
+            <summary>
+            Instantiates a new session to communicate with the Lidl Api
+            </summary>
+            <param name="language">Language to retrieve the content in, i.e. NL-NL for Dutch</param>
+            <param name="country">Country to retrieve the data for, i.e. NL for The Netherlands</param>
+            <param name="clientId">Client Id to provide to the Lidl Api to authenticate</param>
+            <param name="redirectUri">Uri to tell the Lidl Api to redirect to after successfully authenticating</param>
+            <param name="userAgent">User agent to send to the Lidl Api</param>
+            <param name="operatingSystem">The operating system identifier to send to the Lidl API</param>
+            <param name="appPackageName">Internal app package name to send to the Lidl API</param>
+            <param name="appVersion">App version number to send to the Lidl API</param>
+            <param name="requestTimeOut">Timeout to use on the HTTP requests</param>
+            <param name="scopes">The scopes to request access to</param>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.Authenticate(System.String,System.String)">
+            <summary>
+            Authenticate against the Lidl Api with the provided credentials
+            </summary>
+            <param name="emailAddress">E-mail address to authenticate with</param>
+            <param name="password">Password to authenticate with</param>
+            <exception cref="T:KoenZomers.Lidl.Api.Exceptions.CredentialsInvalidException">Thrown if invalid credentials have been provided through <paramref name="emailAddress"/> and/or <paramref name="password"/></exception>
+            <exception cref="T:KoenZomers.Lidl.Api.Exceptions.AccountNotFoundException">Thrown if no account exists witht the provided <paramref name="emailAddress"/></exception>
+            <returns>Boolean indicating whether the authentication was successful (True) or failed (False)</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.Authenticate(System.String)">
+            <summary>
+            Authenticate against the Lidl Api using a refresh token
+            </summary>
+            <param name="refreshToken">Refresh token to use to retrieve an access token</param>
+            <returns>Boolean indicating whether the authentication was successful (True) or failed (False)</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetReceipts(System.Int16)">
+            <summary>
+            Returns the available receipts
+            </summary>
+            <param name="pageNumber">Page number to retrieve the receipts from</param>
+            <returns><see cref="T:KoenZomers.Lidl.Api.Entities.Receipts"/> instance containing all the requested receipts</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetReceipt(System.String)">
+            <summary>
+            Returns details of a specific receipt
+            </summary>
+            <param name="receiptId">Id of the receipt to return the details for</param>
+            <returns><see cref="T:KoenZomers.Lidl.Api.Entities.ReceiptDetail"/> instance containing the requested receipt details</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetNotificationSettings">
+            <summary>
+            Returns notification settings
+            </summary>
+            <returns><see cref="T:KoenZomers.Lidl.Api.Entities.NotificationSettings"/> instance containing the notification settings</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetAlerts" -->
+        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetAlertsByStore(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetCoupons" -->
+        <member name="M:KoenZomers.Lidl.Api.Session.GetLidlPlusDeal">
+            <summary>
+            Returns the current Coupon Plus deal which is typically a monthly contest where depending on how much money you spend at Lidl during that month, you can get free items
+            </summary>
+            <returns><see cref="T:KoenZomers.Lidl.Api.Entities.CouponPlus"/> instance containing all the details on the current Lidl Plus Coupon deal</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetScratchCoupons" -->
+        <member name="M:KoenZomers.Lidl.Api.Session.RedeemScratchCoupon(System.String)">
+            <summary>
+            Redeems/scratches open a specific scratch coupon
+            </summary>
+            <returns>Boolean indicating if the action was succesful</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.MakeReceiptFavorite(System.String)">
+            <summary>
+            Marks a receipt as favorite
+            </summary>
+            <param name="receiptId">Id of the receipt to make favorite</param>
+            <returns>Boolean indicating if the action was succesful</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetStores">
+            <summary>
+            Returns all the store identifiers of the stores that have been visited
+            </summary>
+            <returns>String array with store identifiers of stores that have been visited</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetClientConfigurationDetails(System.String)">
+            <summary>
+            Returns details on the configuration of the Lidl App
+            </summary>
+            <param name="clientId">ClientId to provide the configuration for or NULL to use the ClientId provided in the session constructor</param>
+            <returns></returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetAppTranslations(System.String)">
+            <summary>
+            Returns the localized labels for the current language. No authenticated session required.
+            </summary>
+            <param name="language">Language to provide the localized labels for or NULL to take the language provided in the session constructor</param>
+            <returns>Dictionary with the internal names as the key and the localized friendly text as the value</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.DoesEmailExist(System.String,System.String)">
+            <summary>
+            Returns if the provided e-mail address exists in the Lidl App registrations. No authenticated session required.
+            </summary>
+            <param name="emailAddress">E-mail address to validate</param>
+            <param name="clientId">The ClientId to check the e-mail address against. Leave NULL to use the ClientId used in the session constructor.</param>
+            <returns>Instance of type <see cref="T:KoenZomers.Lidl.Api.Entities.EmailExistsCheckResult"/> containing the result of the validation check</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetLidlDataRequestResultAsEntity``1(System.String)">
+            <summary>
+            Performs a GET request to the provided Lidl Data Endpoint to download the results as a typed entity
+            </summary>
+            <param name="url">Partial URL of the data endpoint to query</param>
+            <typeparam name="T">Type of entity to try to parse the JSON response into</typeparam>
+            <returns>Parsed response into the provided entity type</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.PostLidlDataRequestResultAsEntity``1(System.String)">
+            <summary>
+            Performs a POST request to the provided Lidl Data Endpoint to download the results as a typed entity
+            </summary>
+            <param name="url">Partial URL of the data endpoint to query</param>
+            <typeparam name="T">Type of entity to try to parse the JSON response into</typeparam>
+            <returns>Parsed response into the provided entity type</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetLidlDataRequestResultAsString(System.String)">
+            <summary>
+            Performs a GET request to the provided Lidl Data Endpoint to download the results as a string
+            </summary>
+            <param name="url">Partial URL of the data endpoint to query</param>
+            <returns>Returned JSON data as a string</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.PostLidlDataRequestResultAsString(System.String)">
+            <summary>
+            Performs a POST request to the provided Lidl Data Endpoint to download the results as a string
+            </summary>
+            <param name="url">Partial URL of the data endpoint to query</param>
+            <returns>Returned JSON data as a string</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.EnsureAuthenticated">
+            <summary>
+            Ensures the current session is authenticated. If not, it will try to authenticate and if not possible to, it will throw a <see cref="T:KoenZomers.Lidl.Api.Exceptions.NotAuthenticatedException"/>.
+            </summary>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Utilities.Encryption">
+            <summary>
+            Utilities for encrypion
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Encryption.GeneratePkceCodeVerifier(System.Int16)">
+            <summary>
+            Generates a PKCE Code Verifier
+            </summary>
+            <param name="length">Length of the code verifier challenge (should be at least 43 and at most 128)</param>
+            <seealso cref="!:https://www.authlete.com/developers/pkce/"/>
+            <returns>PKCE Code Verifier</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Encryption.CalculatePkceS256CodeChallenge(System.String)">
+            <summary>
+            Calculates the SHA256 PKCE code challenge for the provided code verifier
+            </summary>
+            <param name="codeverifier">Code verifier to encode</param>
+            <seealso cref="!:https://www.authlete.com/developers/pkce/"/>
+            <returns>SHA256 code challenge</returns>
+        </member>
+        <member name="T:KoenZomers.Lidl.Api.Utilities.Http">
+            <summary>
+            Internal utility class for Http communication with the UniFi Controller
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.DisableSslValidation">
+            <summary>
+            Disables SSL Validation in case of self signed SSL certificates being used
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.EnableTls11and12">
+            <summary>
+            Enables connecting to a remote server hosting UniFi using a TLS 1.1 or TLS 1.2 certificate
+            </summary>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.GetRequestResult(System.Uri,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            Performs a GET request to the provided url to download the page contents
+            </summary>
+            <param name="url">Url of the page to retrieve</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="headerFields">Additional headers to add for the request</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>Contents of the page</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.PostRequestResult(System.Uri,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            Performs a POST request to the provided url to download the page contents
+            </summary>
+            <param name="url">Url of the page to retrieve</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="headerFields">Additional headers to add for the request</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>Contents of the page</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.RequestResult(System.Uri,System.String,System.Net.CookieContainer,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            Performs a request to the provided url to download the page contents
+            </summary>
+            <param name="url">Url of the page to retrieve</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="headerFields">Additional headers to add for the request</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>Contents of the page</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.RequestWebResponse(System.Uri,System.Net.CookieContainer,System.String,System.Int32)">
+            <summary>
+            Performs a GET request to the provided url
+            </summary>
+            <param name="url">Url of the page to retrieve</param>
+            <param name="httpRequestMethod">The HTTP request method to use, i.e. GET/POST/PUT</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>WebRequest response</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.PostRequest(System.Uri,System.String,System.Net.CookieContainer,System.Int32)">
+            <summary>
+            Sends a POST request towards UniFi
+            </summary>
+            <param name="url">Url to POST the postData to</param>
+            <param name="postData">Data to send to the UniFi service, typically a JSON payload</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>The website contents returned by the webserver after posting the data</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.AuthenticateViaUrlEncodedFormMethod(System.Uri,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Net.CookieContainer,System.Int32)">
+            <summary>
+            Sends a POST request using the url encoded form method to authenticate
+            </summary>
+            <param name="url">Url to POST the login information to</param>
+            <param name="formFields">Dictonary with key/value pairs containing the forms data to POST to the webserver</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>The website contents returned by the webserver after posting the data</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.AuthenticateViaJsonPostMethod(System.Uri,System.String,System.String,System.Net.CookieContainer,System.Int32)">
+            <summary>
+            Sends a POST request with JSON variables to authenticate against UniFi
+            </summary>
+            <param name="url">Url to POST the login information to</param>
+            <param name="username">Username to authenticate with</param>
+            <param name="password">Password to authenticate with</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>The website contents returned by the webserver after posting the data</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Utilities.Http.LogoutViaJsonPostMethod(System.Uri,System.Net.CookieContainer,System.Int32)">
+            <summary>
+            Sends a POST request to log out from the UniFi Controller
+            </summary>
+            <param name="url">Url to POST the logout request to</param>
+            <param name="cookieContainer">Cookies which have been recorded for this session</param>
+            <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
+            <returns>The website contents returned by the webserver after posting the data</returns>
+        </member>
+    </members>
+</doc>
