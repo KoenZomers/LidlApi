@@ -17,8 +17,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.300
-    - name: Secret test
-      run: echo ${{ secrets.test_secret }}
+    - shell: bash
+      name: Test secret
+      env:
+        SUPER_SECRET: ${{ secrets.test_secret }}
+      run: |
+        echo "$SUPER_SECRET"
     - name: Install dependencies
       run: dotnet restore
     - name: Build
