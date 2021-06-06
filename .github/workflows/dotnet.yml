@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.300
-    - name: Create File
+    - name: Create config file
       uses: finnp/create-file-action@1.0.0
       env:
         FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/app.config"
