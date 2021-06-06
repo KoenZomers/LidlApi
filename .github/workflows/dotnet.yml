@@ -22,8 +22,7 @@ jobs:
       uses: finnp/create-file-action@1.0.0
       env:
         FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/app.config"
-        FILE_DATA: |
-                    <?xml version="1.0" encoding="utf-8"?>
+        FILE_DATA: <?xml version="1.0" encoding="utf-8"?>
                     <configuration>
                       <appSettings>
                         <add key="EmailAddress" value="${{ secrets.LIDLPLUSEMAILADDRESS }}"/>
