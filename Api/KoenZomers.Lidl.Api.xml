@@ -637,7 +637,12 @@
             </summary>
             <returns><see cref="T:KoenZomers.Lidl.Api.Entities.NotificationSettings"/> instance containing the notification settings</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetAlerts" -->
+        <member name="M:KoenZomers.Lidl.Api.Session.GetAlerts">
+            <summary>
+            Returns alerts
+            </summary>
+            <returns><see cref="!:IList&lt;Entities.Alert&gt;"/> instance containing all the alerts</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetAlertsByStore(System.String)" -->
         <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetCoupons" -->
         <member name="M:KoenZomers.Lidl.Api.Session.GetLidlPlusDeal">

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Net;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace KoenZomers.Lidl.Api
@@ -314,7 +311,7 @@ namespace KoenZomers.Lidl.Api
         /// <summary>
         /// Returns alerts
         /// </summary>
-        /// <returns><see cref="IList<Entities.Alert>"/> instance containing all the alerts</returns>
+        /// <returns><see cref="IList{T}"/> with <see cref="Entities.Alert"/> entities containing all the alerts</returns>
         public async Task<IList<Entities.Alert>> GetAlerts()
         {
             var alerts = await GetLidlDataRequestResultAsEntity<IList<Entities.Alert>>("alerts");
@@ -324,7 +321,7 @@ namespace KoenZomers.Lidl.Api
         /// <summary>
         /// Returns alerts regarding a specific store
         /// </summary>
-        /// <returns><see cref="IList<Entities.Alert>"/> instance containing all the alerts</returns>
+        /// <returns><see cref="IList{T}"/> with <see cref="Entities.Alert"/> entities containing all the alerts of the provided store</returns>
         public async Task<IList<Entities.Alert>> GetAlertsByStore(string storeId)
         {
             var alerts = await PostLidlDataRequestResultAsEntity<IList<Entities.Alert>>($"alerts/geofencing/{storeId}");
@@ -334,7 +331,7 @@ namespace KoenZomers.Lidl.Api
         /// <summary>
         /// Returns coupons
         /// </summary>
-        /// <returns><see cref="IList<Entities.Coupon>"/> instance containing all the coupons</returns>
+        /// <returns><see cref="IList{T}"/> with <see cref="Entities.Coupon"/> entities containing all the coupons</returns>
         public async Task<IList<Entities.Coupon>> GetCoupons()
         {
             var coupons = await GetLidlDataRequestResultAsEntity<IList<Entities.Coupon>>("coupons");
@@ -354,7 +351,7 @@ namespace KoenZomers.Lidl.Api
         /// <summary>
         /// Returns scratch coupons which are rewarded after each purchase at Lidl
         /// </summary>
-        /// <returns><see cref="IList<ScratchCoupon>"/> instance containing all the available scratch coupons</returns>
+        /// <returns><see cref="IList{T}"/> with <see cref="Entities.ScratchCoupon"/> entities containing all the available scratch coupons</returns>
         public async Task<IList<Entities.ScratchCoupon>> GetScratchCoupons()
         {
             var scratchcoupons = await GetLidlDataRequestResultAsEntity<IList<Entities.ScratchCoupon>>("scratchcoupons");
