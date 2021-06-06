@@ -26,18 +26,13 @@ jobs:
                     <configuration>
                       <appSettings>
                         <!-- E-mail address to log in with for the Lidl App to run the unit tests -->
-                        <add key="EmailAddress" value="${{ secrets.TESTSECRET }}"/>
+                        <add key="EmailAddress" value="${{ secrets.LIDLPLUSEMAILADDRESS }}"/>
                         <!-- Password to log in with for the Lidl App to run the unit tests -->
-                        <add key="Password" value=""/>
+                        <add key="Password" value="${{ secrets.LIDLPLUSPASSWORD }}"/>
                         <!-- RefreshToken to log in with for the Lidl App to run the unit tests -->
                         <add key="RefreshToken" value=""/>
                       </appSettings>
                     </configuration>
-    - name: Test secret
-      env:
-        SUPER_SECRET: ${{ secrets.TESTSECRET }}
-      if:  env.SUPER_SECRET == 'Hello World'
-      run: echo "I know what the secret token is!"
     - name: Install dependencies
       run: dotnet restore
     - name: Build
