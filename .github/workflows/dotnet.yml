@@ -16,8 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.300
-    - run: echo ${{secrets.LIDLPLUSEMAILADDRESS }} | sed 's/./& /g'        
+        dotnet-version: 5.0.300 
     - name: Create config file
       uses: finnp/create-file-action@1.0.0
       env:
