@@ -444,7 +444,7 @@ namespace KoenZomers.Lidl.Api
             var resultString = await GetLidlDataRequestResultAsString(url);
 
             // Change the comma's into dots within numbers
-            var localizedResultString = Regex.Replace(resultString, @"(?<=""\d+?),(?=\d+?"")", ".", RegexOptions.CultureInvariant);
+            var localizedResultString = Regex.Replace(resultString, @"(?<=""-?\d+?),(?=\d+?"")", ".", RegexOptions.CultureInvariant);
 
             var resultEntity = JsonSerializer.Deserialize<T>(localizedResultString, new JsonSerializerOptions { NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString } ); 
             return resultEntity;
@@ -461,7 +461,7 @@ namespace KoenZomers.Lidl.Api
             var resultString = await PostLidlDataRequestResultAsString(url);
 
             // Change the comma's into dots within numbers
-            var localizedResultString = Regex.Replace(resultString, @"(?<=""\d+?),(?=\d+?"")", ".", RegexOptions.CultureInvariant);
+            var localizedResultString = Regex.Replace(resultString, @"(?<=""-?\d+?),(?=\d+?"")", ".", RegexOptions.CultureInvariant);
 
             var resultEntity = JsonSerializer.Deserialize<T>(localizedResultString, new JsonSerializerOptions { NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString });
             return resultEntity;

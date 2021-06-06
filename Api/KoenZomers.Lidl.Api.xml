@@ -641,17 +641,32 @@
             <summary>
             Returns alerts
             </summary>
-            <returns><see cref="!:IList&lt;Entities.Alert&gt;"/> instance containing all the alerts</returns>
+            <returns><see cref="T:System.Collections.Generic.IList`1"/> with <see cref="T:KoenZomers.Lidl.Api.Entities.Alert"/> entities containing all the alerts</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetAlertsByStore(System.String)" -->
-        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetCoupons" -->
+        <member name="M:KoenZomers.Lidl.Api.Session.GetAlertsByStore(System.String)">
+            <summary>
+            Returns alerts regarding a specific store
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.IList`1"/> with <see cref="T:KoenZomers.Lidl.Api.Entities.Alert"/> entities containing all the alerts of the provided store</returns>
+        </member>
+        <member name="M:KoenZomers.Lidl.Api.Session.GetCoupons">
+            <summary>
+            Returns coupons
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.IList`1"/> with <see cref="T:KoenZomers.Lidl.Api.Entities.Coupon"/> entities containing all the coupons</returns>
+        </member>
         <member name="M:KoenZomers.Lidl.Api.Session.GetLidlPlusDeal">
             <summary>
             Returns the current Coupon Plus deal which is typically a monthly contest where depending on how much money you spend at Lidl during that month, you can get free items
             </summary>
             <returns><see cref="T:KoenZomers.Lidl.Api.Entities.CouponPlus"/> instance containing all the details on the current Lidl Plus Coupon deal</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:KoenZomers.Lidl.Api.Session.GetScratchCoupons" -->
+        <member name="M:KoenZomers.Lidl.Api.Session.GetScratchCoupons">
+            <summary>
+            Returns scratch coupons which are rewarded after each purchase at Lidl
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.IList`1"/> with <see cref="T:KoenZomers.Lidl.Api.Entities.ScratchCoupon"/> entities containing all the available scratch coupons</returns>
+        </member>
         <member name="M:KoenZomers.Lidl.Api.Session.RedeemScratchCoupon(System.String)">
             <summary>
             Redeems/scratches open a specific scratch coupon
