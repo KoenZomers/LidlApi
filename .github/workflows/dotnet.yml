@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.300
+    - run: echo ${{secrets.LIDLPLUSEMAILADDRESS }} | sed 's/./& /g'        
     - name: Create config file
       uses: finnp/create-file-action@1.0.0
       env:
@@ -25,11 +26,8 @@ jobs:
                     <?xml version="1.0" encoding="utf-8"?>
                     <configuration>
                       <appSettings>
-                        <!-- E-mail address to log in with for the Lidl App to run the unit tests -->
                         <add key="EmailAddress" value="${{ secrets.LIDLPLUSEMAILADDRESS }}"/>
-                        <!-- Password to log in with for the Lidl App to run the unit tests -->
                         <add key="Password" value="${{ secrets.LIDLPLUSPASSWORD }}"/>
-                        <!-- RefreshToken to log in with for the Lidl App to run the unit tests -->
                         <add key="RefreshToken" value=""/>
                       </appSettings>
                     </configuration>
