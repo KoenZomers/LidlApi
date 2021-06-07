@@ -26,11 +26,10 @@ jobs:
                         <add key="RefreshToken" value=""/>
                       </appSettings>
                     </configuration>' > ./UnitTest/app.config
-    - name: Test
-      run: cat ./UnitTest/app.config
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      if: ${{ false }}
       run: dotnet test --no-restore --verbosity minimal
