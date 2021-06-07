@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -17,18 +17,17 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.300 
-    - name: Create config file
-      uses: finnp/create-file-action@1.0.0
-      env:
-        FILE_NAME: "/home/runner/work/LidlApi/LidlApi/UnitTest/app.config"
-        FILE_DATA: <?xml version="1.0" encoding="utf-8"?>
+    - name: Create config file 
+      run: echo '<?xml version="1.0" encoding="utf-8"?>
                     <configuration>
                       <appSettings>
                         <add key="EmailAddress" value="${{ secrets.LIDLPLUSEMAILADDRESS }}"/>
                         <add key="Password" value="${{ secrets.LIDLPLUSPASSWORD }}"/>
                         <add key="RefreshToken" value=""/>
                       </appSettings>
-                    </configuration>
+                    </configuration>' > ./UnitTest/app.config
+    - name: Test
+      run: cat ./UnitTest/app.config
     - name: Install dependencies
       run: dotnet restore
     - name: Build
