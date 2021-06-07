@@ -55,7 +55,7 @@ namespace UnitTest
             {
                 Assert.Inconclusive("Please configure credentials in the App.config file first");
             }
-            System.Diagnostics.Trace.WriteLine("KoenTest: " + emailAddress.Remove(0, 1));
+            
             var session = new Session();
             var success = await session.Authenticate(emailAddress, password);
 

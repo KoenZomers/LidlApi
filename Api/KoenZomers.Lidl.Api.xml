@@ -804,6 +804,7 @@
             Performs a request to the provided url to download the page contents
             </summary>
             <param name="url">Url of the page to retrieve</param>
+            <param name="httpMethod">HTTP Method to use for the request, i.e. GET or POST</param>
             <param name="cookieContainer">Cookies which have been recorded for this session</param>
             <param name="headerFields">Additional headers to add for the request</param>
             <param name="timeout">Timeout in milliseconds on how long the request may take. Default = 60000 = 60 seconds.</param>
