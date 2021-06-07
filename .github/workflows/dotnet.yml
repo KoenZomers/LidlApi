@@ -25,7 +25,7 @@ jobs:
                         <add key="Password" value="${{ secrets.LIDLPLUSPASSWORD }}"/>
                         <add key="RefreshToken" value=""/>
                       </appSettings>
-                    </configuration>" > /home/runner/work/LidlApi/LidlApi/UnitTest/app.config
+                    </configuration>" > ./app.config
     - name: Install dependencies
       run: dotnet restore
     - name: Build
