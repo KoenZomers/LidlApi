@@ -3,6 +3,7 @@
 [![licence badge]][licence]
 [![issues badge]][issues]
 [![prwelcome badge]][prwelcome]
+[![.NET 5 CI](https://github.com/KoenZomers/LidlApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/KoenZomers/LidlApi/actions/workflows/dotnet.yml)
 
 [licence badge]:https://img.shields.io/badge/license-Apache2-blue.svg
 [issues badge]:https://img.shields.io/github/issues/koenzomers/LidlApi.svg
