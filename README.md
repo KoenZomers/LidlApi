@@ -3,6 +3,7 @@
 [![licence badge]][licence]
 [![issues badge]][issues]
 [![prwelcome badge]][prwelcome]
+[![.NET 5 CI](https://github.com/KoenZomers/LidlApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/KoenZomers/LidlApi/actions/workflows/dotnet.yml)
 
 [licence badge]:https://img.shields.io/badge/license-Apache2-blue.svg
 [issues badge]:https://img.shields.io/github/issues/koenzomers/LidlApi.svg
@@ -76,6 +77,10 @@ Have a look at the Unit Tests and/or Console Application for seeing additional s
 Also available as NuGet Package: [KoenZomers.Lidl.Api](https://www.nuget.org/packages/KoenZomers.Lidl.Api/)
 
 ## Version History
+
+Version 1.0.0.1 - JJune 7, 2021
+
+- Minor cosmetical fixes
 
 Version 1.0 - June 4, 2021
 
