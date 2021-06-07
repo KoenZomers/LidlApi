@@ -207,6 +207,12 @@ namespace KoenZomers.Lidl.Api
                                                                                                },
                                                                                                _cookieContainer,
                                                                                                RequestTimeOut);
+            // Ensure we receive a HTTP 302 back, if not, the login failed
+            if(loginResponse1.StatusCode != HttpStatusCode.Redirect)
+            {
+                throw new Exceptions.CredentialsInvalidException(emailAddress, password);
+            }
+            
             // Follow the HTTP 302 redirect to the provided URL
             using var loginResponse2 = await Utilities.Http.RequestWebResponse(new Uri(BaseAuthEndpointUri, loginResponse1.Headers["Location"]), httpRequestMethod: "GET", cookieContainer: _cookieContainer, timeout: RequestTimeOut);
 
