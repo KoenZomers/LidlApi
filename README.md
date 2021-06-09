@@ -78,7 +78,7 @@ Also available as NuGet Package: [KoenZomers.Lidl.Api](https://www.nuget.org/pac
 
 ## Version History
 
-Version 1.0.0.1 - JJune 7, 2021
+Version 1.0.0.1 - June 7, 2021
 
 - Minor cosmetical fixes
 
