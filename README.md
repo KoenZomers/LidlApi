@@ -13,7 +13,7 @@
 [issues]:https://github.com/koenzomers/LidlApi/issues
 [prwelcome]:http://makeapullrequest.com
 
-API in .NET 5 using C# which can be used to read data from the Lidl Plus API used by the Lidl Plus app. Includes Unit Tests and a sample ConsoleApp to test the API. All assemblies are signed and compiled against .NET 5 which makes it usable cross platform and accross all .NET supporting languages.
+API in .NET 5 using C# which can be used to read data from the Lidl Plus API used by the Lidl Plus app. Includes Unit Tests and a sample ConsoleApp to test the API. All assemblies are signed and compiled against .NET 5 which makes it usable cross platform and across all .NET supporting languages.
 
 Note that in no way this code is supported by Lidl itself and it may break at any time if Lidl updates their server side implementation.
 
@@ -35,7 +35,7 @@ This will connect it to the Lidl Plus services of The Netherlands and return con
 var session = new KoenZomers.Lidl.Api.Session(language: "DE-DE", country: "DE");
 ```
 
-The other optional parameters in the constructor you typically don't need to and should not change from their defaults.
+The other optional parameters in the constructor you typically should not change from their defaults.
 
 Once you have the session initiated, you need to authenticate it first using:
 
