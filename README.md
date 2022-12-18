@@ -15,7 +15,8 @@
 
 API in .NET 5 using C# which can be used to read data from the Lidl Plus API used by the Lidl Plus app. Includes Unit Tests and a sample ConsoleApp to test the API. All assemblies are signed and compiled against .NET 5 which makes it usable cross platform and across all .NET supporting languages.
 
-Note that in no way this code is supported by Lidl itself and it may break at any time if Lidl updates their server side implementation.
+## Notice
+Note that in no way this code is supported by Lidl itself. Lidl has now implemented a system which prevents logging in to their APIs by third parties. This code therefore no longer works and there is no (easy) way to get it to work again. Use it for inspiration, but don't expect it to work anymore as-is. I personally have no intent to fix it again.
 
 ## Usage
 
